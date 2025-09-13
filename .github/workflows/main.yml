@@ -1,4 +1,5 @@
-on: workflow_dispatch: # 手动触发工作流
+on: 
+  workflow_dispatch: # 手动触发工作流
 
 jobs:
   build:
@@ -13,7 +14,7 @@ jobs:
           git config --global user.name "barrywang4269"
           git config --global user.email "barrywang4269@gmail.com"
 
-      - name: Create 365 empty commits
+      - name: Create empty commits
         run: |
           start_date="2025-01-01"
           for i in $(seq 0 1800); do
@@ -24,3 +25,4 @@ jobs:
       - name: Push changes
         run: |
           git push origin main
+
